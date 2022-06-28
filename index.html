@@ -46,7 +46,7 @@
             var wordlength = randomwordchoice[i];
             placeholders.push("_ ")
             console.log(placeholders)
-            if (i === randomwordchoice.length) {
+            if (i < randomwordchoice.length) {
                 wordtext.textContent = placeholders
             }
         }
