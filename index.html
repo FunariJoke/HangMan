@@ -10,11 +10,64 @@
 <body>
     <header>
         <h1>Welcome to My HangMan game!</h1>
-        <p>press any key to behinm</p>
+        <p>press any key to begin</p>
     </header>
 
+    <div id="words">
+        <p id="letters">aaaaaah</p>
+    </div>
+
     <script>
-        document.onkeyup
+
+        var Words = [
+
+        "word",
+        "smord",
+        "dord",
+        "cord",
+        "tord",
+        "nord",
+
+        ]
+
+        var currentWordIndex = 0;
+        var guesses = 0;
+        var guessedLetters = [];
+        var wins = 0;
+        var losses = 0;
+        var wordtext = document.getElementById("letters");
+
+
+        var randomwordchoice = Words[Math.floor(Math.random() * Words.length)];
+
+        var placeholders = []
+
+        for (let i = 0; i < randomwordchoice.length; i++) {
+            var wordlength = randomwordchoice[i];
+            placeholders.push("_ ")
+            console.log(placeholders)
+            if (i === randomwordchoice.length) {
+                wordtext.textContent = placeholders
+            }
+        }
+
+        (randomwordchoice.length)
+
+        document.onkeyup = function(event) {
+            var keyPressed = event.key
+
+            alert(keyPressed)
+        }
+
+        
+
+        function goToNextWord() {
+            currentWordIndex++;
+            guesses = 0;
+            guessedLetters = [];
+            updateDisplay();
+        }
+
     </script>
 </body>
 </html>
